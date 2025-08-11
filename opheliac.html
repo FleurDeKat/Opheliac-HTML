@@ -30,6 +30,17 @@
       audio {
         width: 300px;
       }
+
+      /* Force MediaElement controls to be visible */
+      .mejs__container {
+        background: #222 !important;
+      }
+      .mejs__button > button {
+        filter: invert(100%);
+      }
+      .mejs__time, .mejs__time-total {
+        color: white !important;
+      }
     </style>
   </head>
   <body>
@@ -46,7 +57,7 @@
     <script src="https://unpkg.com/mediaelement@7.0.7/build/mediaelement-and-player.min.js"></script>
     <script>
       const player = new MediaElementPlayer('player', {
-        features: ['playpause', 'progress', 'volume', 'fullscreen'],
+        features: ['playpause', 'progress', 'volume'],
         startVolume: 0.8
       });
     </script>
