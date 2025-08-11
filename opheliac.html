@@ -1,37 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Opheliac</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/mediaelement@7.0.7/build/mediaelementplayer.min.css"/>
-    <style>
-        body {
-            margin: 0;
-            background-color: black;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-        audio {
-            width: 100%;
-            margin-top: 10px;
-        }
-    </style>
-</head>
-<body>
-    <img src="https://img4.gelbooru.com/images/44/5a/445a49ccb3f8d48b6f0196f639e66d2e.jpg" alt="Cover Art">
-    <audio controls>
-        <source src="https://fleurdekat.github.io/Opheliac-HTML/opheliac.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
+    <link rel="stylesheet" type="text/css" href="../css/music-player.css"/>
+  </head>
+  <body>
+    <div class="musicplayer" style="height: 100dvh">
+      <div class="mp__box">   
+        <div class="mp__controls">
+          <audio class="mp__music">
+            <source src="https://fleurdekat.github.io/Opheliac-HTML/Emilie_Autumn_-_Opheliac_KLICKAUD.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+        <div class="mp__cover">
+          <div class="mp__box-1">
+            <div class="mp__box-2">
+              <div class="mp__box-3">
+                <img class="mp__image" src="https://img4.gelbooru.com/images/44/5a/445a49ccb3f8d48b6f0196f639e66d2e.jpg">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="https://unpkg.com/mediaelement@7.0.7/build/mediaelement-and-player.min.js"></script>
-</body>
+    <script src="https://unpkg.com/fast-average-color@9.5.0/dist/index.browser.min.js"></script>
+    <script src="../js/music-player.js"></script>
+  </body>
 </html>
