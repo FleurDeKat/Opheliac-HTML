@@ -1,62 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>Opheliac</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
-    <!-- MediaElement.js CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/mediaelement@7.0.7/build/mediaelementplayer.min.css"/>
-
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/mediaelement@7.0.7/build/mediaelementplayer.min.css"/>
     <style>
-      html, body {
-        margin: 0;
-        padding: 0;
-        background-color: #111;
-        color: white;
-        font-family: sans-serif;
-        width: 300px; /* match iframe width */
-        height: 385px; /* match iframe height */
-        overflow: hidden; /* hide scrollbars */
-      }
-      .cover {
-        width: 300px;
-        height: auto;
-        border-radius: 8px;
-        overflow: hidden;
-      }
-      audio {
-        width: 300px;
-        margin-top: 5px;
-      }
-      .mejs__container {
-        background: #222 !important;
-      }
-      .mejs__button > button {
-        filter: invert(100%);
-      }
-      .mejs__time, .mejs__time-total {
-        color: white !important;
-      }
+        body {
+            margin: 0;
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        audio {
+            width: 100%;
+            margin-top: 10px;
+        }
     </style>
-  </head>
-  <body>
-    <div class="cover">
-      <img src="https://img4.gelbooru.com/images/44/5a/445a49ccb3f8d48b6f0196f639e66d2e.jpg" alt="Opheliac Cover" style="width:100%; display:block;">
-    </div>
-
-    <audio id="player" controls>
-      <source src="https://fleurdekat.github.io/Opheliac-HTML/Emilie_Autumn_-_Opheliac_KLICKAUD.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
+</head>
+<body>
+    <img src="https://img4.gelbooru.com/images/44/5a/445a49ccb3f8d48b6f0196f639e66d2e.jpg" alt="Cover Art">
+    <audio controls>
+        <source src="https://fleurdekat.github.io/Opheliac-HTML/opheliac.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
     </audio>
-
-    <!-- MediaElement.js Scripts -->
     <script src="https://unpkg.com/mediaelement@7.0.7/build/mediaelement-and-player.min.js"></script>
-    <script>
-      const player = new MediaElementPlayer('player', {
-        features: ['playpause', 'progress', 'volume'],
-        startVolume: 0.8
-      });
-    </script>
-  </body>
+</body>
 </html>
