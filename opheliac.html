@@ -4,30 +4,51 @@
     <title>Opheliac</title>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" type="text/css" href="https://unpkg.com/mediaelement@7.0.7/build/mediaelementplayer.min.css"/>
-    <link rel="stylesheet" type="text/css" href="../css/music-player.css"/>
+
+    <!-- MediaElement.js CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/mediaelement@7.0.7/build/mediaelementplayer.min.css"/>
+
+    <style>
+      body {
+        background-color: #111;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        color: white;
+        font-family: sans-serif;
+        margin: 0;
+      }
+      .cover {
+        max-width: 300px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(0,0,0,0.7);
+      }
+      audio {
+        width: 300px;
+      }
+    </style>
   </head>
   <body>
-    <div class="musicplayer" style="height: 100dvh">
-      <div class="mp__box">   
-        <div class="mp__controls">
-          <audio class="mp__music">
-            <source src="file:///C:/Users/natag/Downloads/Emilie_Autumn_-_Opheliac_KLICKAUD.mp3">
-          </audio>
-        </div>
-        <div class="mp__cover">
-          <div class="mp__box-1">
-            <div class="mp__box-2">
-              <div class="mp__box-3">
-                <img class="mp__image" src="https://img4.gelbooru.com/images/44/5a/445a49ccb3f8d48b6f0196f639e66d2e.jpg">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="cover">
+      <img src="https://img4.gelbooru.com/images/44/5a/445a49ccb3f8d48b6f0196f639e66d2e.jpg" alt="Opheliac Cover" style="width:100%; display:block;">
     </div>
+
+    <audio id="player" controls>
+      <source src="https://fleurdekat.github.io/Opheliac-HTML/Emilie_Autumn_-_Opheliac_KLICKAUD.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <!-- MediaElement.js Scripts -->
     <script src="https://unpkg.com/mediaelement@7.0.7/build/mediaelement-and-player.min.js"></script>
-    <script src="https://unpkg.com/fast-average-color@9.5.0/dist/index.browser.min.js"></script>
-    <script src="../js/music-player.js"></script>
+    <script>
+      const player = new MediaElementPlayer('player', {
+        features: ['playpause', 'progress', 'volume', 'fullscreen'],
+        startVolume: 0.8
+      });
+    </script>
   </body>
 </html>
